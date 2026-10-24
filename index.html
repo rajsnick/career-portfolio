@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rahul Sharma — Workday & HR Technology Integration Lead. Specializing in Workday HCM, PECI, CCW, Calculated Fields, and enterprise payroll data reconciliation.">
+  <title>Rahul Sharma | Workday & HR Technology Integration Lead</title>
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #1e293b;
+      --accent: #0284c7;
+      --accent-light: #e0f2fe;
+      --accent-dark: #0369a1;
+      --success: #059669;
+      --success-light: #d1fae5;
+      --warning: #d97706;
+      --warning-light: #fef3c7;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --border-focus: #38bdf8;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --radius: 8px;
+      --radius-lg: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover, a:focus {
+      color: var(--accent-dark);
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover, nav a:focus {
+      color: var(--primary);
+      text-decoration: none;
+      border-bottom-color: var(--accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 72px 0 56px;
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-content {
+      max-width: 820px;
+    }
+
+    .badge-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      border: 1px solid rgba(2, 132, 199, 0.2);
+    }
+
+    .pill.verified {
+      background: var(--success-light);
+      color: var(--success);
+      border-color: rgba(5, 150, 105, 0.2);
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--primary);
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent) 0%, #0369a1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p.lead {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover, .btn-primary:focus {
+      background-color: var(--secondary);
+      color: #ffffff;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-outline {
+      background-color: #ffffff;
+      color: var(--primary);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover, .btn-outline:focus {
+      background-color: var(--bg);
+      border-color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    /* Section Global Styles */
+    section {
+      padding: 64px 0;
+    }
+
+    .section-title {
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow);
+      border-color: #cbd5e1;
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius);
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .evidence-tag {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-dark);
+      background: #f0f9ff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid #bae6fd;
+    }
+
+    /* Case Studies */
+    .case-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 24px;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .case-card:hover {
+      box-shadow: var(--shadow);
+    }
+
+    .case-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .case-header h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .case-col h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .case-col p {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* Architecture Visualizer */
+    .diagram-container {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      overflow-x: auto;
+    }
+
+    .diagram-svg {
+      width: 100%;
+      height: auto;
+      min-width: 680px;
+    }
+
+    /* Skills Spectrum */
+    .skills-category {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+
+    .skills-category h3 {
+      font-size: 1.15rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      border-radius: var(--radius);
+      background: #f1f5f9;
+      color: var(--secondary);
+      font-weight: 500;
+      border: 1px solid #e2e8f0;
+    }
+
+    .skill-tag.expert {
+      background: #ecfdf5;
+      color: #065f46;
+      border-color: #a7f3d0;
+      font-weight: 600;
+    }
+
+    .skill-tag.advanced {
+      background: #f0f9ff;
+      color: #0369a1;
+      border-color: #bae6fd;
+    }
+
+    .skill-tag.working {
+      background: #fffbeb;
+      color: #92400e;
+      border-color: #fde68a;
+    }
+
+    /* Governance & Truth Box */
+    .truth-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 20px;
+      margin-top: 32px;
+    }
+
+    .truth-box h4 {
+      font-size: 1rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .truth-box p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: #94a3b8;
+      padding: 48px 0;
+      border-top: 1px solid #334155;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .footer-nav a {
+      color: #94a3b8;
+    }
+
+    .footer-nav a:hover {
+      color: #ffffff;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: #64748b;
+      width: 100%;
+      margin-top: 16px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        display: none;
+      }
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-wrapper">
+      <div class="brand">RAHUL <span>SHARMA</span></div>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="#specializations">Specializations</a></li>
+          <li><a href="#architecture">Architecture</a></li>
+          <li><a href="#case-studies">Case Studies</a></li>
+          <li><a href="#skills">Skills Depth</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+      <div class="container hero-content">
+        <div class="badge-bar">
+          <span class="pill verified">✓ 100% Traceable Career Evidence</span>
+          <span class="pill">Workday HCM & PECI</span>
+          <span class="pill">ADP GlobalView / SAP</span>
+          <span class="pill">Data Reconciliation</span>
+        </div>
+        <h1>Workday & HR Technology <span>Integration Lead</span></h1>
+        <p class="lead">
+          Bridging enterprise HR systems of record with downstream payroll calculation engines. Specializing in Workday PECI change-detection analysis, complex calculated fields precedence, cross-system reconciliation controls, and zero-defect production release governance.
+        </p>
+        <div class="hero-actions">
+          <a href="#architecture" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            Explore Integration Architecture
+          </a>
+          <a href="#case-studies" class="btn btn-outline">
+            View Sanitized Case Studies
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Specializations -->
+    <section id="specializations">
+      <div class="container">
+        <div class="section-title">
+          <h2>Core Specializations</h2>
+          <p>Architectural oversight and operational controls grounded in enterprise delivery.</p>
+        </div>
+        <div class="grid-3">
+          <!-- Item 1 -->
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            </div>
+            <h3>Workday–Payroll Data Flow Analysis</h3>
+            <p>Governing data pipelines across 10+ interface families, specializing in Workday PECI delta change logs, CCW feeds, and Integration Field Overrides.</p>
+            <span class="evidence-tag">Evidence IDs: E-0003, E-0009</span>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </div>
+            <h3>Calculated Fields & Business Logic</h3>
+            <p>Formulating complex Workday calculated fields (LRVs, Evaluate Expressions, condition logic) resolving branch codes, union trades, and contract overrides (Z1–Z8).</p>
+            <span class="evidence-tag">Evidence ID: E-0004</span>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <h3>Cross-System Data Reconciliation</h3>
+            <p>Building automated reconciliation frameworks between Workday and ADP records (IT0001/IT0027) to catch silent data drops prior to gross-to-net payroll runs.</p>
+            <span class="evidence-tag">Evidence ID: E-0002</span>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            </div>
+            <h3>Defect Root-Cause Analysis (RCA)</h3>
+            <p>Translating payroll gateway rejections, AUF01 order validity errors, and BAPI exceptions into exact functional mapping fixes and change registers.</p>
+            <span class="evidence-tag">Evidence ID: E-0005</span>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M9 15l2 2 4-4"></path></svg>
+            </div>
+            <h3>Test Governance & Operational SOPs</h3>
+            <p>Designing multi-contract test matrices (Z1–Z8 permutations), authoring operational runbooks for supplemental loads, and leading release hypercare.</p>
+            <span class="evidence-tag">Evidence IDs: E-0006, E-0007, E-0008</span>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3>Stakeholder & Vendor Leadership</h3>
+            <p>Uniting Payroll Operations, HR, IT developers, and AMS vendor teams to resolve defects and safeguard bi-weekly payroll cutoff deadlines.</p>
+            <span class="evidence-tag">Evidence IDs: E-0009, E-0010</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Visualizer -->
+    <section id="architecture" style="background-color: #ffffff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <div class="section-title">
+          <h2>Enterprise Integration Architecture</h2>
+          <p>Sanitized system boundary model: Workday HCM to Downstream Payroll Engine.</p>
+        </div>
+        <div class="diagram-container">
+          <svg class="diagram-svg" viewBox="0 0 880 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="System Context Architecture Diagram">
+            <!-- Background Tiers -->
+            <rect x="20" y="20" width="240" height="220" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-dasharray="4 4" />
+            <text x="140" y="44" font-size="12" font-weight="700" fill="#0f172a" text-anchor="middle">WORKDAY CLOUD TENANT</text>
+            
+            <rect x="320" y="20" width="240" height="220" rx="8" fill="#f0f9ff" stroke="#bae6fd" stroke-dasharray="4 4" />
+            <text x="440" y="44" font-size="12" font-weight="700" fill="#0369a1" text-anchor="middle">TRANSFORMATION GATEWAY</text>
+
+            <rect x="620" y="20" width="240" height="220" rx="8" fill="#ecfdf5" stroke="#a7f3d0" stroke-dasharray="4 4" />
+            <text x="740" y="44" font-size="12" font-weight="700" fill="#065f46" text-anchor="middle">PAYROLL ENGINE (ADP / SAP)</text>
+
+            <!-- Tier 1 Nodes -->
+            <rect x="40" y="60" width="200" height="40" rx="6" fill="#ffffff" stroke="#94a3b8" />
+            <text x="140" y="85" font-size="11" fill="#1e293b" text-anchor="middle">Worker Master Data (HRIS)</text>
+
+            <rect x="40" y="115" width="200" height="40" rx="6" fill="#ffffff" stroke="#0284c7" />
+            <text x="140" y="140" font-size="11" font-weight="600" fill="#0369a1" text-anchor="middle">Calculated Fields Precedence</text>
+
+            <rect x="40" y="170" width="200" height="40" rx="6" fill="#ffffff" stroke="#94a3b8" />
+            <text x="140" y="195" font-size="11" fill="#1e293b" text-anchor="middle">PECI Delta Extract Engine</text>
+
+            <!-- Tier 2 Nodes -->
+            <rect x="340" y="75" width="200" height="45" rx="6" fill="#ffffff" stroke="#0284c7" />
+            <text x="440" y="98" font-size="11" font-weight="600" fill="#0f172a" text-anchor="middle">XSLT Document Transform</text>
+            <text x="440" y="112" font-size="10" fill="#64748b" text-anchor="middle">Date Formatting & Tag Mapping</text>
+
+            <rect x="340" y="150" width="200" height="45" rx="6" fill="#ffffff" stroke="#94a3b8" />
+            <text x="440" y="173" font-size="11" fill="#0f172a" text-anchor="middle">Encrypted SFTP Transport</text>
+            <text x="440" y="187" font-size="10" fill="#64748b" text-anchor="middle">Payload Hash Verification</text>
+
+            <!-- Tier 3 Nodes -->
+            <rect x="640" y="60" width="200" height="40" rx="6" fill="#ffffff" stroke="#059669" />
+            <text x="740" y="85" font-size="11" fill="#065f46" text-anchor="middle">BAPI Simulation & Syntax QA</text>
+
+            <rect x="640" y="115" width="200" height="40" rx="6" fill="#ffffff" stroke="#059669" />
+            <text x="740" y="140" font-size="11" fill="#065f46" text-anchor="middle">IT0001 (Org) & IT0027 (Costing)</text>
+
+            <rect x="640" y="170" width="200" height="40" rx="6" fill="#ffffff" stroke="#059669" />
+            <text x="740" y="195" font-size="11" font-weight="600" fill="#065f46" text-anchor="middle">Gross-to-Net Payroll Run</text>
+
+            <!-- Connecting Arrows -->
+            <line x1="240" y1="135" x2="340" y2="100" stroke="#0284c7" stroke-width="2" marker-end="url(#arrow)" />
+            <line x1="240" y1="190" x2="340" y2="170" stroke="#0284c7" stroke-width="2" marker-end="url(#arrow)" />
+            <line x1="540" y1="98" x2="640" y2="80" stroke="#0284c7" stroke-width="2" marker-end="url(#arrow)" />
+            <line x1="540" y1="172" x2="640" y2="135" stroke="#0284c7" stroke-width="2" marker-end="url(#arrow)" />
+
+            <!-- Marker Def -->
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#0284c7" />
+              </marker>
+            </defs>
+          </svg>
+        </div>
+        <div class="truth-box">
+          <h4>Sanitized Architectural Case Study</h4>
+          <p>Extracted from <a href="file:///Users/rahul/Documents/Job%20Hunt%20Automation/career/evidence/portfolio-sprint-1-architecture-diagram.md">portfolio-sprint-1-architecture-diagram.md</a>. All customer tenant names, internal server paths, and employee records have been completely generalized to protect enterprise confidentiality.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sanitized Case Studies -->
+    <section id="case-studies">
+      <div class="container">
+        <div class="section-title">
+          <h2>Selected Impact Case Studies</h2>
+          <p>Real enterprise challenges solved through rigorous data analysis and release governance.</p>
+        </div>
+
+        <!-- Case 1 -->
+        <article class="case-card">
+          <div class="case-header">
+            <div>
+              <span class="pill">Architecture & Business Logic</span>
+              <h3 style="margin-top: 8px;">Multi-Contract Labor Classification & Cost Allocation</h3>
+            </div>
+            <span class="evidence-tag">Evidence: E-0004, E-0005, E-0006, E-0007</span>
+          </div>
+          <div class="case-grid">
+            <div class="case-col">
+              <h4>The Challenge</h4>
+              <p>Workforce operating across diverse labor agreements and work contracts (Z1–Z8) experienced recurring SAP Infotype 0027 payroll gateway rejections due to unmapped AUF01 order numbers and effective-date sequencing mismatches.</p>
+            </div>
+            <div class="case-col">
+              <h4>The Action</h4>
+              <p>Formulated Workday calculated-field precedence (LRVs, Evaluate Expressions) resolving labor classes dynamically. Separated volatile cost allocations into supplemental feeds and instituted mandatory gateway simulation checks.</p>
+            </div>
+            <div class="case-col">
+              <h4>The Outcome</h4>
+              <p>Validated 100% end-to-end integration acceptance in ADP QA, authored standard operational runbooks for operations teams, and eliminated recurring payroll rejections in production cycles.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case 2 -->
+        <article class="case-card">
+          <div class="case-header">
+            <div>
+              <span class="pill">Data Reconciliation & Access</span>
+              <h3 style="margin-top: 8px;">Cross-System Identity Linkage & Access Remediation</h3>
+            </div>
+            <span class="evidence-tag">Evidence: E-0001, E-0002</span>
+          </div>
+          <div class="case-grid">
+            <div class="case-col">
+              <h4>The Challenge</h4>
+              <p>Employees experienced ADP GlobalView login failures, profile dissociations, missing historical payslips, and authentication locks stemming from cross-system worker identifier mismatches with Workday HCM.</p>
+            </div>
+            <div class="case-col">
+              <h4>The Action</h4>
+              <p>Led cross-functional triage with IT Security and ADP specialists, audited worker identifier mapping logic from Workday, and established an active exception register to track record remediation.</p>
+            </div>
+            <div class="case-col">
+              <h4>The Outcome</h4>
+              <p>Restored self-service payslip access for impacted workforces and established pre-flight validation rules preventing future duplicate profile generation.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills Architecture & Depth -->
+    <section id="skills" style="background-color: #ffffff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <div class="section-title">
+          <h2>Skills Architecture & Practical Depth</h2>
+          <p>Transparently classified by verified delivery ownership rather than keyword inflation.</p>
+        </div>
+        <div class="grid-3">
+          <div class="skills-category">
+            <h3><span style="color: #059669;">●</span> Expert / Owned</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Direct design, formula authoring, and operational governance.</p>
+            <div class="tag-cloud">
+              <span class="skill-tag expert">Workday PECI Analysis</span>
+              <span class="skill-tag expert">Calculated Fields Precedence</span>
+              <span class="skill-tag expert">Cross-System Reconciliation</span>
+              <span class="skill-tag expert">ADP GlobalView Data Flows</span>
+              <span class="skill-tag expert">Defect Root-Cause Analysis (RCA)</span>
+              <span class="skill-tag expert">Operational Runbooks & SOPs</span>
+            </div>
+          </div>
+
+          <div class="skills-category">
+            <h3><span style="color: #0284c7;">●</span> Advanced / Governed</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Integration testing, gateway validation, and partner oversight.</p>
+            <div class="tag-cloud">
+              <span class="skill-tag advanced">Core Connector Worker (CCW)</span>
+              <span class="skill-tag advanced">Integration Field Overrides</span>
+              <span class="skill-tag advanced">SAP Infotypes (IT0001, IT0027)</span>
+              <span class="skill-tag advanced">Test Matrices (Z1-Z8)</span>
+              <span class="skill-tag advanced">Hypercare Monitoring</span>
+              <span class="skill-tag advanced">Vendor SLA Governance</span>
+            </div>
+          </div>
+
+          <div class="skills-category">
+            <h3><span style="color: #d97706;">●</span> Working Knowledge</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Data structure analysis and adjacent interface collaboration.</p>
+            <div class="tag-cloud">
+              <span class="skill-tag working">XML / XSLT Transformations</span>
+              <span class="skill-tag working">Time Tracking Reconciliation</span>
+              <span class="skill-tag working">Absence Data Flow</span>
+              <span class="skill-tag working">SOAP / REST Web Services</span>
+              <span class="skill-tag working">EIB File Uploads</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="truth-box" style="margin-top: 24px;">
+          <h4>Candidate Truth Policy Notice</h4>
+          <p>Consistent with persistent career guidelines in <code>AGENTS.md</code>, this portfolio strictly avoids claiming independent custom Java coding in Workday Studio, Workday Extend application development, or unverified Workday Pro certifications.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Opportunities -->
+    <section id="contact">
+      <div class="container" style="max-width: 680px; text-align: center;">
+        <div class="section-title">
+          <h2>Professional Enquiries</h2>
+          <p>Exploring Senior Workday Integration Lead, Payroll Transformation, and HR Technology Delivery opportunities in India (Remote / Hybrid).</p>
+        </div>
+        <div class="card" style="padding: 36px;">
+          <p style="font-size: 1.05rem; color: var(--secondary); margin-bottom: 24px;">
+            To maintain privacy and prevent automated web harvesting, direct telephone numbers and full employment records are provided upon mutual professional connection.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Connect on LinkedIn
+            </a>
+            <span class="btn btn-outline" style="cursor: default;">
+              Resume Available via Verified Request
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-brand">Rahul Sharma | HR Technology Portfolio</div>
+      <ul class="footer-nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#specializations">Specializations</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#case-studies">Case Studies</a></li>
+      </ul>
+      <div class="footer-copy">
+        Sanitized career portfolio built from verified evidence ledger. Zero employer-confidential data exposed. Local preview version.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
